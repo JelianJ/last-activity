@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Bootstrap link for design -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+  
+    body {
+      background-color: gray;
+      color: #121212;
+    }
+    .row{
+      display: flex;
+      justify-content: center;
+    }
+    h1, h2 {
+      color: #fff;
+    }
+    .card {
+      background-color: #222;
+      color: #fff;
+    }
+    .form-control {
+      background-color: #333;
+      color: #fff;
+      border-color: #666;
+    }
+    .table {
+      background-color: #333;
+      color: #fff;
+    }
+    td{
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Title of the system -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="alert text-center">
+          Task Management
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Form design -->
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <form id="form">
+              <input type="hidden" name="id" id="inputTaskId">
+              <label for="inputTaskName">Task Name</label>
+              <input type="text" placeholder="Task Name" class="form-control" id="inputTaskName" required>
+              <br>
+
+              <label for="inputTaskDescription">Task Description</label>
+              <input type="text" placeholder="Task Description" class="form-control" id="inputTaskDescription" required>
+              <br>
+
+              <label for="inputTaskDifficulty">Task Difficulty</label>
+              <input type="text" placeholder="TaskDifficulty" class="form-control" id="inputTaskDifficulty" required>
+              <br>
+
+              <label for="inputExpenses">Expenses</label>
+              <input type="text" placeholder="Task Expenses" class="form-control" id="inputExpenses" required>
+              <br>
+              
+               <label for="inputLocation">Location</label>
+              <input type="text" placeholder="Location" class="form-control" id="inputLocation" required>
+              <br>
+          
+
+              <label for="inputDate">Date</label>
+              <input type="date" placeholder="Date" class="form-control" id="inputDate" required>
+              <br>
+
+              <label for="inputDeadline">Deadline</label>
+              <input type="date" placeholder="Deadline" class="form-control" id="inputDeadline" required>
+              <br>
+
+
+              <button class="btn btn-sm btn-primary" type="button" onclick="save()">Save</button>
+              <button class="btn btn-sm btn-primary" type="button" onclick="clearData()">Reset</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+       <!-- Table design for staff list -->
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h2>Staff List</h2>
+            <div class="table-responsive">
+              <table id="datatable" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Difficulty</th>      
+                    <th>Expenses</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Deadline</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <br>
+    <br>
+     
+   
+
+  <!-- Link for the design -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+  <!-- Script for fetching data -->
+  <script>
+    allData();
+  </script>
+  <!-- Script for resetting the form -->
+  <script>
+    function clearData(){
+      document.getElementById('form').reset();
+      document.getElementById('inputTaskId').value = "";
+    }
+  </script>
+</body>
+</html>
